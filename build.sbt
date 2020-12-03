@@ -17,8 +17,8 @@
 
 name := "spark-lucenerdd"
 organization := "org.zouzias"
-scalaVersion := "2.11.12"
-crossScalaVersions := Seq("2.11.12")
+scalaVersion := "2.12.12"
+crossScalaVersions := Seq("2.11.12", "2.12.12")
 licenses := Seq("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.html"))
 homepage := Some(url("https://github.com/zouzias/spark-lucenerdd"))
 
@@ -79,20 +79,20 @@ pomExtra := <scm>
 
 credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
 
-val luceneV = "8.4.0"
-val sparkVersion = "2.4.4"
+val luceneV = "8.4.1"
+val sparkVersion = "2.4.6"
 
 
 // scalastyle:off
-val scalactic                 = "org.scalactic"                  %% "scalactic"                % "3.1.0"
-val scalatest                 = "org.scalatest"                  %% "scalatest"                % "3.1.0" % "test"
+val scalactic                 = "org.scalactic"                  %% "scalactic"                % "3.0.8"
+val scalatest                 = "org.scalatest"                  %% "scalatest"                % "3.0.8" % "test"
 
-val joda_time                 = "joda-time"                      % "joda-time"                 % "2.10.5"
+val joda_time                 = "joda-time"                      % "joda-time"                 % "2.8.1"
 val algebird                  = "com.twitter"                    %% "algebird-core"            % "0.13.6"
-val joda_convert              = "org.joda"                       % "joda-convert"              % "2.2.1"
+val joda_convert              = "org.joda"                       % "joda-convert"              % "1.8.1"
 val spatial4j                 = "org.locationtech.spatial4j"     % "spatial4j"                 % "0.7"
 
-val typesafe_config           = "com.typesafe"                   % "config"                    % "1.3.4"
+val typesafe_config           = "com.typesafe"                   % "config"                    % "1.3.1"
 
 val lucene_facet              = "org.apache.lucene"              % "lucene-facet"              % luceneV
 val lucene_analyzers          = "org.apache.lucene"              % "lucene-analyzers-common"   % luceneV
@@ -126,7 +126,7 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % sparkVersion % "provided",
   "org.apache.spark" %% "spark-sql" % sparkVersion % "provided",
   "org.apache.spark" %% "spark-mllib" % sparkVersion % "provided",
-  "com.holdenkarau"  %% "spark-testing-base" % s"2.4.3_0.12.0" % "test" intransitive(),
+  "com.holdenkarau"  %% "spark-testing-base" % "2.4.5_0.14.0" % "test" intransitive(),
   "org.scala-lang"    % "scala-library" % scalaVersion.value % "compile"
 )
 
