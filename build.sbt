@@ -80,17 +80,17 @@ pomExtra := <scm>
 credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
 
 val luceneV = "8.4.1"
-val sparkVersion = "2.4.6"
+val sparkVersion = "3.0.1"
 
 
 // scalastyle:off
 val scalactic                 = "org.scalactic"                  %% "scalactic"                % "3.0.8"
 val scalatest                 = "org.scalatest"                  %% "scalatest"                % "3.0.8" % "test"
 
-val joda_time                 = "joda-time"                      % "joda-time"                 % "2.8.1"
-val algebird                  = "com.twitter"                    %% "algebird-core"            % "0.13.6"
-val joda_convert              = "org.joda"                       % "joda-convert"              % "1.8.1"
-val spatial4j                 = "org.locationtech.spatial4j"     % "spatial4j"                 % "0.7"
+val joda_time                 = "joda-time"                      % "joda-time"                 % "2.9.5"
+val algebird                  = "com.twitter"                    %% "algebird-core"            % "0.13.7"
+val joda_convert              = "org.joda"                       % "joda-convert"              % "2.2.1"
+val spatial4j                 = "org.locationtech.spatial4j"     % "spatial4j"                 % "0.8"
 
 val typesafe_config           = "com.typesafe"                   % "config"                    % "1.3.1"
 
@@ -101,7 +101,7 @@ val lucene_expressions        = "org.apache.lucene"              % "lucene-expre
 val lucene_spatial            = "org.apache.lucene"              % "lucene-spatial"            % luceneV
 val lucene_spatial_extras     = "org.apache.lucene"              % "lucene-spatial-extras"     % luceneV
 
-val jts                       = "org.locationtech.jts"           % "jts-core"                  % "1.16.1"
+val jts                       = "org.locationtech.jts"           % "jts-core"                  % "1.17.1"
 // scalastyle:on
 
 
@@ -126,7 +126,7 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % sparkVersion % "provided",
   "org.apache.spark" %% "spark-sql" % sparkVersion % "provided",
   "org.apache.spark" %% "spark-mllib" % sparkVersion % "provided",
-  "com.holdenkarau"  %% "spark-testing-base" % "2.4.5_0.14.0" % "test" intransitive(),
+  "com.holdenkarau"  %% "spark-testing-base" % "3.0.1_1.0.0" % "test" intransitive(),
   "org.scala-lang"    % "scala-library" % scalaVersion.value % "compile"
 )
 
